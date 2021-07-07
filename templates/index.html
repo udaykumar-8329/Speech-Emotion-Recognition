@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Speech Emotion Recognition</title>
+<style>
+div {
+  <!--background-image: url("static/images/bodyimg.png"); -->
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  
+}
+
+.hd {
+  display: flex;
+  justify-content: space-around;
+  border: 5px solid black;
+  border-radius: 45px;
+  background-color: violet;
+}
+
+.head1 {
+  align-items: center;
+  font-size: 50px;
+  margin-top: 48px;
+  color:white;
+}
+
+.image {
+  margin-top: 5px;
+}
+
+  </style>
+</head>
+<body>
+
+
+<header class="hd">
+    <img class="image" src="static\images\logo.jfif" height="150" width="250" alt="This is CHARITY DONOR logo.">
+    <h1 class="head1"><font size = "6">SPEECH EMOTION RECOGNITION</font></h1>
+</header>
+
+<div>
+<br>
+<ul type="square">
+<font size="4">
+<li>Emotion recognition is a rapidly growing research domain in recent years.</li> 
+<li>Unlike humans, machines lack the abilities to perceive and show emotions.</li> 
+<li>But human-computer interaction can be improved by automated emotions recognition, thereby reducing the need of human intervention.</li>
+<li>Speech is the most natural way of expressing ourselves as humans.</li>
+<li>It is only natural then to extend this communication medium to computer applications.</li>
+<li>We define speech emotion recognition systems as a collection of methodologies that process and classify speech signals to detect the embedded emotions.</li>
+</font></ul>
+
+<center>
+<table border='2' style='width:60%;font-size:25px'>
+  <tr>
+    <th>EMOTIONS</th>
+    <th>EMOTION PREDICTION</th>
+  </tr>
+  <tr>
+    <td><center>Anger</center></td>
+<td rowspan='7' style="background-color:#90EE90;"><center><h4 style="color:red;">{{ prediction_text }}</h4></center></td>
+  </tr>
+  <tr>
+    <td><center>Disgust</center></td>
+  </tr>
+<tr>
+    <td><center>Fear</center></td>
+  </tr>
+<tr>
+    <td><center>Happy</center></td>
+  </tr>
+<tr>
+    <td><center>Neutral</center></td>
+  </tr>
+<tr>
+    <td><center>Sad</center></td>
+  </tr>
+<tr>
+    <td><center>Surprise</center></td>
+  </tr>
+</table>
+</center>
+
+<form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+<br>
+
+<center><font size="4"><b>Choose an audio file to find the emotion:</b></font>
+<input type="file" id="audio-selector" name="file" required="required"></br></br>
+<button name="submit" style="background-color:blue;color:white"><b><font size="3">CHECK FOR EMOTION</font></b></button></center>
+<br>
+</form>
+</div>
+	
+</body>
+</html>

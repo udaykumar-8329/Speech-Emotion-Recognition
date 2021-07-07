@@ -1,0 +1,6 @@
+numpy 
+pandas
+flask
+keras
+tensorflow==2.4.1
+librosa
