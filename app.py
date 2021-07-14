@@ -1,7 +1,7 @@
 import os
-import keras
-from flask import Flask, request, render_template, flash
-from keras.models import load_model
+from tensorflow import keras
+from flask import Flask, request, render_template, flash, redirect
+#from keras.models import load_model
 import pickle
 import librosa
 import numpy as np
@@ -15,7 +15,7 @@ from utils.feature_extraction import get_features_dataframe
 
 app = Flask(__name__)
 
-model=load_model('model')
+model=tf.keras.models.load_model('model')
 opt = keras.optimizers.RMSprop(lr=0.00001, decay=1e-6)
 model.compile(loss='categorical_crossentropy', optimizer=opt,metrics=['accuracy'])
 emotions={0:"anger",1:"disgust",2:"fear",3:"happy",4:"neutral",5:"sad",6:"surprise"}
